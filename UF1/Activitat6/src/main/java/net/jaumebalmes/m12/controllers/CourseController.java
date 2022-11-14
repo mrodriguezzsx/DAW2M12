@@ -26,7 +26,8 @@ import net.jaumebalmes.m12.repos.CourseRepository;
 			return courseRepo.findAll();
 		}
 		
-		@GetMapping("course/{id}")
+
+		@GetMapping("courses/{id}")
 		public Course getCourse(@PathVariable long id) {
 			
 			return courseRepo.findById(id).get();
