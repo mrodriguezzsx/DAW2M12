@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+
 @Entity //taula de la BD
 public class Course {
 	
@@ -50,6 +51,7 @@ public class Course {
 		this.title = title;
 	}
 
+
 	public List<CourseMaterial> getCourseMaterial() {
 		return courseMaterial;
 	}
@@ -62,5 +64,4 @@ public class Course {
 	public String toString() {
 		return "Course [title=" + title + "]";
 	}
-	
 }
