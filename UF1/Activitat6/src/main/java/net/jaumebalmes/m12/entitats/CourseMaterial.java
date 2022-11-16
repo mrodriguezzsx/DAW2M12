@@ -1,6 +1,8 @@
 package net.jaumebalmes.m12.entitats;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,8 +23,24 @@ public class CourseMaterial {
 	@JsonIgnore
 	private Course course;*/
 	
-	@JsonIgnore
+	/*@JsonIgnore
 	@ManyToOne
+	private Course course;*/
+	
+	/*@ManyToOne(optional = false)
+	@JsonIgnore
+	private Course course;*/
+	
+	/*@ManyToOne(fetch = FetchType.EAGER)
+	@JsonIgnore
+	private Course course;*/
+	
+	/*@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+	private Course course;*/
+	
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	@JsonIgnore
 	private Course course;
 
 	public CourseMaterial(long id, String url) {
@@ -51,13 +69,13 @@ public class CourseMaterial {
 		this.url = url;
 	}
 
-	public Course getCourse() {
+	/*public Course getCourse() {
 		return course;
 	}
 
 	public void setCourse(Course course) {
 		this.course = course;
-	}
+	}*/
 
 	@Override
 	public String toString() {
