@@ -26,10 +26,16 @@ import net.jaumebalmes.m12.repos.CourseRepository;
 			return courseRepo.findAll();
 		}
 		
-
 		@GetMapping("courses/{id}")
 		public Course getCourse(@PathVariable long id) {
+			System.out.println("LAZY");
 			
 			return courseRepo.findById(id).get();
 		}
+		
+		@DeleteMapping("courses/{id}")
+	    public ResponseEntity<Course>  deleteCourse(@PathVariable Long id) {
+			courseRepo.deleteById(id);
+	        return ResponseEntity.noContent().build();
+	    }
 }
