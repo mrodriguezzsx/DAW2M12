@@ -39,7 +39,7 @@ public class CourseMaterial {
 	@JsonIgnore
 	private Course course;*/
 	
-	@ManyToOne(cascade = CascadeType.REFRESH)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Course course;
 
